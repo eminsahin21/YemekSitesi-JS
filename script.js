@@ -128,7 +128,7 @@ function showCards(cardCount, kategori) {
 
     //en dış kısımda her satırda 2 tane col öğesi
     var col = document.createElement("div");
-    col.className = "col-6";
+    col.className = "col-xs-12 col-lg-6";
     cardContainer.appendChild(col)
 
     //her col öğesinin içine card öğesi

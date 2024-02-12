@@ -161,3 +161,37 @@ h4 {
 .button-special.clicked {
     border: 2px solid #FF8C32;
 }
+
+@media only screen and (min-width: 768px) {
+    /* For desktop */
+    div.card{
+        width: 600px;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 500px) {
+    div.card{
+        width: 300px;
+        height: 400px;
+    }
+
+    button.button-special{
+        margin-right: 0px;
+        width: 100px;
+        padding: 0;
+    }
+
+    div.btn-row {
+        width: fit-content;
+    }
+
+    div#cardContainer {
+        margin-left: 10px;
+    }
+
+    div.col-xs-12 {
+        height: 400px;
+        margin-bottom: 50px;
+    }
+}
