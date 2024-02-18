@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "axios": "^1.6.7",
+    "browserify": "^17.0.0",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^22.0.0",
+    "puppeteer-core": "^22.0.0",
+    "require": "^0.4.4"
+  },
+  "name": "package.json",
+  "description": "![image](https://github.com/eminsahin21/YemekSitesi-JS/assets/75633311/35344465-5796-4f67-ba78-ed690d3c28b4)",
+  "version": "1.0.0",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
