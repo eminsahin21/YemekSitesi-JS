@@ -84,31 +84,55 @@ var mainbutton = document.querySelector("#button_all")
 
 window.onload = function(){
   
+  let liste = [1,2,3,4,5,6,7,8,9,10]
   mainbutton.classList.add("clicked")
-  showCards(10,"")
+  showCards(10,"", liste)
+
+  let cards = document.querySelectorAll(".card mb-3")
+  let cardTitles = document.querySelectorAll(".menu-title")
+
+
+  // cardTitles.forEach(item => {
+  //   console.log(item.textContent)
+  // })
+
 }
 
 function secimButton(id) {
 
   mainbutton.classList.remove("clicked")
+  let liste = []
+  
 
   switch (id) {
     case "button_all":
-      showCards(10, "");
+      liste = menu.map(oge => oge.id);
+      showCards(10, "", liste);
       break;
     case "button_akdeniz":
-      showCards(4,"Akdeniz");
+      liste = menu.filter(oge => oge.category == "Akdeniz").map(oge => oge.id);
+      showCards(4,"Akdeniz", liste);
       break;
     case "button_ege":
-      showCards(2,"Ege");
+      liste = menu.filter(oge => oge.category == "Ege").map(oge => oge.id);
+      showCards(2,"Ege", liste);
       break;
     case "button_anadolu":
-      showCards(4,"Anadolu");
+      liste = menu.filter(oge => oge.category == "Anadolu").map(oge => oge.id);
+      showCards(4,"Anadolu", liste);
       break;
   }
+
+  console.log(liste)
 }
 
-function showCards(cardCount, kategori) {
+function detayliTarif(cardID){
+    console.log("card "+cardID)
+    localStorage.setItem("yemek_id", cardID);
+    window.location.href = "tarifsayfasi.html"
+}
+
+function showCards(cardCount, kategori, idListe) {
   var cardContainer = document.getElementById("cardContainer");
   cardContainer.innerHTML = ""; // Önceki kartları temizle
 
@@ -120,10 +144,8 @@ function showCards(cardCount, kategori) {
     yeniliste = menu.filter(oge => oge.category == kategori)
   }
 
-  console.log(yeniliste)
-
-  
-
+  // console.log(yeniliste)
+    
   for (var i = 0; i < cardCount; i++) {
 
     //en dış kısımda her satırda 2 tane col öğesi
@@ -135,6 +157,10 @@ function showCards(cardCount, kategori) {
     var card = document.createElement("div");
     card.className = "card mb-3";
     card.style.maxWidth = "650px";
+    card.id = idListe[i]
+    card.onclick = function() {
+      detayliTarif(this.id);
+    };
     col.appendChild(card);
 
     //her card öğesini parçalara ayırabilmek için row öğesi
@@ -166,7 +192,7 @@ function showCards(cardCount, kategori) {
     var title = document.createElement("h5")
     title.className = "menu-title"
     title.innerHTML = yeniliste[i].title
-    title.style.borderBottom = "1px solid black"
+    title.style.borderBottom = "2px solid #FF8C32"
     cardbody.appendChild(title)
 
     var content = document.createElement("p")

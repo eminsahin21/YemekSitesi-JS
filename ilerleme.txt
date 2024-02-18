@@ -1,0 +1,18 @@
+Diğer sayfaya card idsi gönderme tmm
+2 tane container ,biri ürün adı ,alttaki tarif ,tarifin üstünde(containerin içinde) ortalanmış ürün görseli
+
+menu objesi için ayrı bir json dosyası açılcak.tarif sayfasında fetch ile veriyi ordan alıcaz
+
+
+
+next checkpoint
+ürün puanlama-yıldız
+yorum atma - tarife
+
+
+
+next checkpoint
+kullanıcıdan ürün bilgisi alma ve sayfada gösterme
+
+
+tarif sayfasinda gomme tarif videosu youtube dan 
